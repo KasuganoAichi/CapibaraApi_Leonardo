@@ -251,10 +251,10 @@
       //const cep = inputCep.value.replace(/\D/g, ''); 
 
       // Validação simples (UX)
-      //if (cep.length !== 6) {
-       // divResultado.innerHTML = `<p class="erro-texto">CEP inválido! Digite 8 números.</p>`;
-       // return;
-   //   }
+      if (inputCep.value > 1473 || inputCep.value < 1 || isNaN(inputCep.value)) {
+        divResultado.innerHTML = `<p class="erro-texto">Entrada inválida! Digite um número de 1 a 1473.</p>`;
+        return;
+      }
 
       // Estado de Loading (UX)
       btnBuscar.textContent = "Buscando...";
